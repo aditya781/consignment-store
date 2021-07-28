@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width-device-width , intial-scale=1.0">
+  <title>Consignment Store </title>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/Sell.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+  <nav> 
+
+    <!--menu-bar----------------------------------------->
+    <div class="navigation">
+        <!--logo------------>
+        <a href="/home" class="logo"><img src="../img/logo.svg"></a>
+        <!--menu-icon------------->
+        <div class="toggle"></div>
+        <!--menu----------------->
+        <ul class="menu">
+          <li><form method="GET" action="/home"><button class="navButton">Home</button></form></li>
+          <li  class="shop"><form method="GET" action="/shop"><button class="navButton">Shop</button></form></li>
+          <li><form method="GET" action="/sell"><button class="navButton">Sell</button></form></li>
+          <li><button class="navButton">Donate</button></li>
+        
+        </ul>
+        <!--right-menu----------->
+            <div class="right-menu">
+              <!--
+                <a href="#" class="search">
+                    <i class="fas fa-search"></i>
+                </a>
+                -->
+                <a href="/" class="">
+                  <i class="far fa-user"></i>
+              </a>
+                <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+                
+            </div>
+
+  </div>
+  </nav>
+  <label id="error" class="error"><%=error %> </label>
+<div class="container">
+  
+  <form method="POST" action="/itemDonate" enctype="multipart/form-data">
+    <h2 class="tm-block-title d-inline-block" style="margin-bottom: 5%;">Donate Your Product</h2>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Product</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="pname" name="fname" placeholder="Mention the key features of your item (e.g. brand, model, type)" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Set Price</label>
+      </div>
+      <div class="col-75">
+          <!--
+        <input type="text" id="lname" name="fprice" placeholder="₹" required>
+          -->
+        <select   id="lname" name="fprice">
+            <option value="fprice">0</option>
+          </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Category</label>
+      </div>
+      <div class="col-75">
+        <select id="Category" name="fcategory">
+          <option value="Donate">Donate</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Description</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="fdescription" placeholder="Include condition, features and reason for selling" style="height:200px" required></textarea>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="address">Address</label>
+      </div>
+      <div class="col-75">
+        <textarea type="text" id="Add" name="Address" placeholder="Address"></textarea>
+      </div>
+    </div>
+      <div class="row">
+          <div class="col-25">
+           <label for="image">Upload Image </label>
+    
+          </div>
+          <div class="col-75">
+            <input type="file" id="myFile" name="filename" required>
+    
+          </div>
+        </div>
+   
+   
+  
+    <div class="row">
+      <button type="submit" class="btn">Donate Product</button>
+    </div>
+    
+  </form>
+</div>
+
+
+
+<div class="table-responsive" style="margin-top: 5%;">
+  <h2 class="tm-block-title d-inline-block" style=" margin-left: 45%;"> <b>Product List </b></h2>
+  <table id="mytable" class="center">
+                   
+      <thead style="background-color: rgb(75, 155, 155);color: white;text-align: center;">
+        
+      <th>Product Name</th>
+        <th>Price</th>     
+          <th>Delete</th>
+      </thead>
+  <tbody>
+
+  
+
+      <% for(var i=0; i<invItems.length; i++){ %>
+        <tr>
+
+          <td><%=invItems[i].name  %> </td>
+          <td><%=invItems[i].price  %> </td>
+          <td><a href="/deleteDonate/<%=invItems[i]._id  %> "><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></a></td>
+        </tr>
+      <% } %> 
+
+
+  </tbody>
+
+</table>
+
+</div>
+
+
+
+
+<script src="Home.js">
+      
+</script>
+
+</body>
+</html>

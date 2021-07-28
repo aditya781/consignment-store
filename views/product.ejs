@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product Card/Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+<body>
+  <nav> 
+
+    <!--menu-bar----------------------------------------->
+    <div class="navigation">
+        <!--logo------------>
+        <a href="/home" class="logo"><img src="../img/logo.svg"></a>
+        <!--menu-icon------------->
+        <div class="toggle"></div>
+        <!--menu----------------->
+        <ul class="menu">
+            <li><a href="/home">Home</a></li>
+            <li  class="shop"><a href="/shop" >Shop</a></li>
+            <li><a href="/sell">Sell</a>
+            </li>
+            <li><a href="/donate">Donate</a></li>
+        
+        </ul>
+        <!--right-menu----------->
+            <div class="right-menu">
+              <!--
+                <a href="#" class="search">
+                    <i class="fas fa-search"></i>
+                </a>
+                -->
+                <a href="/" class="user">
+                    <i class="far fa-user"></i>
+                </a>
+                <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+                
+            </div>
+
+</div>
+</nav>
+
+
+    <div class = "card-wrapper">
+      <div class = "card">
+        <!-- card left -->
+        <div class = "product-imgs">
+          <div class = "img-display">
+            <div class = "img-showcase">
+              <img src = "img/<%=productItem[0].image  %> " alt = "image1">
+              
+            </div>
+          </div>
+            
+        </div>
+        <!-- card right -->
+        <div class = "product-content" >
+          <div class="NamePrice">
+            <h2 class = "product-title"><%=productItem[0].name %> </h2>
+
+            <div class = "product-price">
+              <p class = "new-price"><span class="priceSpan"> Price:</span>  <span>Rs <%=productItem[0].price  %></span></p>
+          </div>
+
+          </div>
+          
+
+          <div class = "product-detail">
+            <h3>Detail and Description of item</h3>
+            <p> <%=productItem[0].description  %></p>
+            
+          </div>
+          <div class="SellerDescription">
+            <h3>Seller Description</h3>
+            <p>Name     :<%=userItem[0].name  %></p>
+            <p>Email Id :<%=userItem[0].email  %> </p>
+            <p>Phone    :<%=productItem[0].phone  %></p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    
+    
+</body>
+</html>

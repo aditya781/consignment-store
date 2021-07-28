@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    line-height: 1.5;
+}
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+img{
+    width:auto;
+    display: block;
+    padding: 10px;
+    border: 1px solid gray;
+    margin-bottom:5px;
+    
+}
+.img-display{
+    overflow: hidden;
+    
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+    width: 450px !important;
+    height: 600px !important;
+}
+
+.product-content{
+    padding: 2rem 1rem;
+    margin-top: 20%;
+    
+}
+.product-detail
+{
+    width: 400px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.SellerDescription
+{
+    width: 400px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 0;
+}
+.NamePrice
+{
+    width: 400px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin-bottom:10px;
+}
+.product-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #ff0f0f;
+    margin: 1rem 0;
+    margin-top:0rem;
+}
+.product-title::after{
+    
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+
+.product-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.product-price span{
+    font-weight: 400;
+}
+.new-price span{
+    color: #256eff;
+    font-size: 1.5rem;
+}
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.product-detail h3{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.product-detail p{
+    font-size: 1.2rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+  
+}
+
+
+
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .card-wrapper{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
+}
+
+.priceSpan{
+    font-size: 1.5rem;
+    color: #12263a;
+}

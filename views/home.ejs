@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width , intial-scale=1.0">
+        <title>Second Hand Store</title>
+        <link rel="stylesheet" href="css/home.css">
+        <script src=Home.js></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap" rel="stylesheet">
+
+        
+    </head>
+<body>
+
+    <nav> 
+       
+        <!--menu-bar----------------------------------------->
+        <div class="navigation">
+            <!--logo------------>
+            <a href="/home" class="logo"><img src="../img/logo.svg"></a>
+            <!--menu-icon------------->
+            <div class="toggle"></div>
+            <!--menu----------------->
+            <ul class="menu">
+                <li><form method="GET" action="/home"><button class="navButton">Home</button></form></li>
+                <li  class="shop"><form method="GET" action="/shop"><button class="navButton">Shop</button></form></li>
+                <li><form method="GET" action="/sell"><button class="navButton">Sell</button></form></li>
+                <li><a href="/donate"><button class="navButton">Donate</button></a></li>
+            
+            </ul>
+            <!--right-menu----------->
+            <div class="right-menu">
+                <a href="javascript:void(0);" class="search">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="/" class="">
+                    <i class="far fa-user"></i>
+                </a>
+                <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+                
+                
+            </div>
+              <!--search-bar----------------------------------->
+  <div class="search-bar">
+    
+    <!--search-input------->
+    <form method="POST" action="/search">
+        <div class="search-input">
+    
+            <input type="text" placeholder="Search For Product" name="fsearch" required />
+            <button class="navButton"  type="submit">Search</button>
+       
+            <!--cancel-btn--->
+            <a href="javascript:void(0);" class="search-cancel">
+                <i class="fas fa-times"></i>
+            </a>
+    
+
+    </div>
+</form>
+  </div>
+    <!---login-and-sign-up--------------------------------->
+    <div class="form">
+        <!--login---------->
+        <div class="login-form">
+            <!--cancel-btn---------------->
+            <a href="javascript:void(0);" class="form-cancel">
+                <i class="fas fa-times"></i>
+            </a>
+            <strong>Log In</strong>
+            <label id="error" class="error"><%=error %> </label>
+
+           
+            
+        
+                
+            <!--inputs-->
+            <form method="POST" action="/login">
+                <input type="number" name="fphone" placeholder="Phone Number" required>
+                <input type="password" name="fpassword" placeholder="Password" required/>
+                <input  type="submit" value="Log In"/>
+            </form>
+            <!--forget-and-sign-up-btn-->
+            <div class="form-btns">
+                <a href="#" class="forget">Forget Your Password?</a>
+                <a href="javascript:void(0);" class="sign-up-btn">Create Account</a>
+            </div>
+        </div>
+            <!--Sign-up---------->
+            <div class="sign-up-form">
+                <!--cancel-btn---------------->
+            <a href="javascript:void(0);" class="form-cancel">
+                <i class="fas fa-times"></i>
+            </a>
+                <strong>Sign Up</strong>
+                <!--inputs-->
+                <form method="POST" action="/register">
+                    <input type="text" name="fname" placeholder="Full Name" required/>
+                    <input type="number" name="fphone" placeholder="Phone Number" required>
+                    <input type="email" name="femail" placeholder="Example@gmail.com" required/>
+                    <input type="text" name="fcallege" placeholder="Enter you College Name" required/>
+                    <input type="password" name="fpassword" placeholder="Password" required/>
+                   <!-- <input type="password" name="fconfirmPassword" placeholder="Confirm Password" required/>-->
+                    <input type="submit" value="Sign Up"/>
+                </form>
+                <!--forget-and-sign-up-btn-->
+                <div class="form-btns">
+                    <a href="javascript:void(0);" class="already-account">
+                        Already Have Account?</a>
+    
+                </div>
+            </div>
+    </div>
+  
+
+            </div>
+
+ </nav>
+
+
+    <div class="container">
+       
+         <!-----------full-slider----------------------------->
+    <ul id="adaptive" class="cs-hidden">
+            
+       <li class="item-a">
+       <div class="full-slider-box f-slide-1">
+        
+        <div class="f-slider-text-container">
+        <div class="f-slider-text">
+            <span>Get the best goods with the cheapest price</span>
+           
+            
+            
+            
+        </div>
+        <form method="GET" action="/shop"> <button  class="f-slider-btn">Shop Now</button></form>
+        </div>  
+    
+    </div>
+    </li>
+     
+     
+    </ul>
+    </div>
+
+<!--featured Categories-->
+    
+     <ul id="autoWidth" class="container" class="cs-hidden">
+        <!--box-1--------------------->
+        <li class="item">
+            <div class="feature-box">
+                <a href="/book">
+                    <img src="../img/bk1.jpeg">
+                </a>
+            </div>
+            <span>Books</span>
+        </li>
+        <!--box-2--------------------->
+        <li class="item">
+            <div class="feature-box">
+                <a href="/stationery">
+                    <img src="../img/stat1.jpeg">
+                </a>
+            </div>
+            <span>Stationery</span>
+        </li>
+        <!--box-3--------------------->
+        <li class="item" >
+            <div class="feature-box" >
+                <a href="/electronics" >
+                    <img src="../img/elec.jpeg">
+                </a>
+            </div>
+            <span>Electronics</span>
+        </li>
+        <!--box-4--------------------->
+        <li class="item">
+            <div class="feature-box ">
+                <a href="/homeApp">
+                    <img src="../img/homeapp.jpeg">
+                </a>
+            </div>
+            <span>Home Appliances</span>
+        </li>
+   
+        
+      </ul>
+       <!--NEW ARRIVAL-------------------------------->
+       <section class="new-arrival">
+            
+        <!--heading-------->
+        <div class="arrival-heading">
+            <strong>New Arrival</strong>
+        </div>
+          <!--products----------------------->
+          <div class="product-container">
+              
+            <!--product-box-1---------->
+              <div class="product-box">
+                  <!--product-img------------>
+                  <div class="product-img">
+                      <!--add-cart---->
+                     
+                      <!--img------>
+                   <a href="/productPage/60a917dd770b0730502d7e14" > <img src="img/Casio.jpeg"></a>
+                  </div>
+                  <!--product-details-------->
+                  <div class="product-details">
+                      <a href="/productPage/60a917dd770b0730502d7e14" class="p-name">Casio Calculator</a>
+                      <span class="p-price">Rs 200.00</span>
+
+                      <!--
+                      <span class="p-con">Seller Contact: 9561252684</span>
+                      <span class="p-des">Description: Scientific calculater with 1 year warrenty. In good condition.</span>
+                      -->
+                  </div>
+              </div>
+                <!--product-box-2---------->
+                <div class="product-box">
+                    <!--product-img------------>
+                    <div class="product-img">
+                        <!--add-cart--
+                      <a href="#" class="add-cart"><i class="fas fa-shopping-cart"></i></a> -->
+                      <!--img------>
+                      <a href="/productPage/60a9175a770b0730502d7e12"><img src="img/DSA Book.jpeg"></a>
+                    </div>
+                    <!--product-details-------->
+                    <div class="product-details">
+                        <a href="/productPage/60a9175a770b0730502d7e12" class="p-name">DSA Book</a>
+                        <span class="p-price">Rs 309.00</span>
+
+                        <!--
+                        <span class="p-con">Seller Contact: 9061252684</span>
+                      <span class="p-des">Description: Second year engineering data structure book. Related to SPPU syllabus. New book in good condition. </span>
+                    -->
+                    </div>
+                </div>
+              <!--product-box-3---------->
+              <div class="product-box">
+                <!--product-img------------>
+                <div class="product-img">
+                    <!--add-cart---->
+                    
+                    <!--img------>
+                  <a href="/productPage/60a91793770b0730502d7e13"><img src="img/Drafter.jpeg"></a>
+                </div>
+                <!--product-details-------->
+                <div class="product-details">
+                    <a href="/productPage/60a91793770b0730502d7e13" class="p-name">Drafter</a>
+                    <span class="p-price">Rs 50.00</span>
+
+                    <!--
+                    <span class="p-con">Seller Contact: 9561252684</span>
+                    <span class="p-des">Description: 2 month old drafter in good condition. Plastic build. With good accuracy. Can be used in cg or drawing</span>
+               -->
+                </div>
+            </div>
+              <!--product-box-4---------->
+              <div class="product-box">
+                <!--product-img------------>
+                <div class="product-img">
+                    <!--add-cart---->
+                
+                    <!--img------>
+                  <a href="/productPage/60ab6b1640454438acbaa7c6"><img src="img/Drawing Board.jpeg"></a>
+                </div>
+                <!--product-details-------->
+                <div class="product-details">
+                    <a href="/productPage/60ab6b1640454438acbaa7c6" class="p-name">Technical drawing board</a>
+                    <span class="p-price">Rs 250.00</span>
+                    <!--
+                    <span class="p-con">Seller Contact: 9766199722</span>
+                      <span class="p-des">Description: Wooden drawing board. With length 50 inch and width 40 inch</span>
+                -->
+                    </div>
+            </div>
+              <!--product-box-5---------->
+              <div class="product-box">
+                <!--product-img------------>
+                <div class="product-img">
+                    <!--add-cart---->
+                    <!--img------>
+                  <a href="/productPage/60ad325593598642f413dc03"><img src="img/Laptop.jpeg"></a>
+                </div>
+                <!--product-details-------->
+                <div class="product-details">
+                    <a href="/productPage/60a916c2770b0730502d7e10" class="p-name">Laptop</a>
+                    <span class="p-price">Rs 30000.00</span>
+
+                    <!--
+                    <span class="p-con">Seller Contact: 9561282400</span>
+                      <span class="p-des">Description: Dell laptop with 8GB ram and 2 TB HDD. Has 1 year warrenty. With build in all microsoft softwares. </span>
+                -->
+                    </div>
+            </div>
+              <!--product-box-6---------->
+              <div class="product-box">
+                <!--product-img------------>
+                <div class="product-img">
+                    <!--add-cart---->
+                    <!--img------>
+                  <a href="/productPage/60aa589645878d471ca0ef01"><img src="img/Iron.jpeg"></a>
+                </div>
+                <!--product-details-------->
+                <div class="product-details">
+                    <a href="/productPage/60aa589645878d471ca0ef01" class="p-name">Dry iron Philips</a>
+                    <span class="p-price">Rs 400.00</span>
+
+                    <!--
+                    <span class="p-con">Seller Contact: 9500252684</span>
+                      <span class="p-des">Description: Bajaj iron with plastic build. Has 1 year warrenty.</span>
+                      -->
+                </div>
+            </div>
+             
+          </div>
+      </section>
+<!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-2">
+                    <img src="img/logo.svg">
+                    <p>Putting the customer first.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+<script>
+    
+    $(document).on('click','.user,.already-account',function(){
+        $('.form').addClass('login-active').removeClass('sign-up-active')
+    });
+
+    $(document).on('click','.sign-up-btn',function(){
+        $('.form').addClass('sign-up-active').removeClass('login-active')
+    });
+
+    $(document).on('click','.form-cancel',function(){
+        $('.form').removeClass('login-active').removeClass('sign-up-active')
+    });
+
+    
+
+</script>
+
+<script>
+    /*-----For Search Bar-----------------------------*/
+    $(document).on('click','.search',function(){
+        $('.search-bar').addClass('search-bar-active')
+    });
+ 
+    $(document).on('click','.search-cancel',function(){
+        $('.search-bar').removeClass('search-bar-active')
+    });
+  
+</script>
+
+   
+</body>
+</html>

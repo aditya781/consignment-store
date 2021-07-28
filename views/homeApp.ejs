@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consignment Store </title>
+    <link rel="stylesheet" href="css/stationery.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+    <nav> 
+
+        <!--menu-bar----------------------------------------->
+        <div class="navigation">
+            <!--logo------------>
+            <a href="/home" class="logo"><img src="../img/logo.svg"></a>
+            <!--menu-icon------------->
+            <div class="toggle"></div>
+            <!--menu----------------->
+            <ul class="menu">
+                <li><form method="GET" action="/home"><button class="navButton">Home</button></form></li>
+                <li  class="shop"><form method="GET" action="/shop"><button class="navButton">Shop</button></form></li>
+                <li><form method="GET" action="/sell"><button class="navButton">Sell</button></form></li>
+                <li><a href="/donate"><button class="navButton">Donate</button></a></li>
+            
+            </ul>
+            <!--right-menu----------->
+            <div class="right-menu">
+                <a href="javascript:void(0);" class="search">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="/" class="user">
+                    <i class="far fa-user"></i>
+                </a>
+                <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+              <!--search-bar----------------------------------->
+  <div class="search-bar">
+    
+    <!--search-input------->
+    <form method="POST" action="/search">
+        <div class="search-input">
+    
+            <input type="text" placeholder="Search For Product" name="fsearch" required />
+            <button class="navButton"  type="submit">Search</button>
+       
+            <!--cancel-btn--->
+            <a href="javascript:void(0);" class="search-cancel">
+                <i class="fas fa-times"></i>
+            </a>
+    
+
+    </div>
+</form>
+  </div>
+    <!---login-and-sign-up--------------------------------->
+    <div class="form">
+        <!--login---------->
+        <div class="login-form">
+            <!--cancel-btn---------------->
+            <a href="javascript:void(0);" class="form-cancel">
+                <i class="fas fa-times"></i>
+            </a>
+            <strong>Log In</strong>
+            <!--inputs-->
+            <form>
+                <input type="number" number="Phone Number" placeholder="Phone Number" required>
+                <input type="password" name="password" placeholder="Password" required/>
+                <input type="submit" value="Log In"/>
+            </form>
+            <!--forget-and-sign-up-btn-->
+            <div class="form-btns">
+                <a href="#" class="forget">Forget Your Password?</a>
+                <a href="javascript:void(0);" class="sign-up-btn">Create Account</a>
+            </div>
+        </div>
+            <!--Sign-up---------->
+            <div class="sign-up-form">
+                <!--cancel-btn---------------->
+            <a href="javascript:void(0);" class="form-cancel">
+                <i class="fas fa-times"></i>
+            </a>
+                <strong>Sign Up</strong>
+                <!--inputs-->
+                <form>
+                    <input type="text" name="fullname" placeholder="Full Name" required/>
+                    <input type="number" number="Phone Number" placeholder="Phone Number" required>
+                    <input type="email" name="email" placeholder="Example@gmail.com" required/>
+                    <input type="text" name="College Name" placeholder="Enter you College Name" required/>
+                    <input type="password" name="password" placeholder="Password" required/>
+                    <input type="password" name="Confirm password" placeholder="Confirm Password" required/>
+                    <input type="submit" value="Sign Up"/>
+                </form>
+                <!--forget-and-sign-up-btn-->
+                <div class="form-btns">
+                    <a href="javascript:void(0);" class="already-account">
+                        Already Have Account?</a>
+    
+                </div>
+            </div>
+    </div>
+  
+
+   </div>
+ </nav>
+<div class="catClass" id="categoryMenu">
+  <ul class="menu">
+    <li><form method="GET" action="/shop"><button class="navButton1">All</button></form></li>
+    <li><form method="GET" action="/book"><button class="navButton">Books</button></form></li>
+    <li><form method="GET" action="/stationery"><button class="navButton">Stationary</button></form></li>
+    <li><form method="GET" action="/electronics"><button class="navButton">Electronics</button></form></li>
+    <li><form ><button class="navButtonBook">Home Appliances</button></form></li>  
+  </ul>
+</div>
+
+<div class="product-container">
+    
+    <% for(var i=0; i<invItemsBook.length; i++){ %>
+            <div class="product-box">
+                <!--product-img------------>
+                <div class="product-img">
+                  
+                  <!--img------>
+                  <a href="/productPage/<%= invItemsBook[i]._id %>"><img  src="../img/<%=invItemsBook[i].image %>" ></a>
+                </div>
+                <!--product-details-------->
+                <div class="product-details">
+                    <a href="/productPage/<%= invItemsBook[i]._id %> " class="p-name"><%=invItemsBook[i].name  %></a>
+                    <span class="p-price">Rs <%=invItemsBook[i].price  %></span>
+
+                    <!--
+                    <span class="p-con">Seller Contact: <%=invItemsBook[i].phone  %></span>
+                    <span class="p-des">Description: <%=invItemsBook[i].description  %></span>
+                    -->
+                </div>
+            </div>
+    <% } %> 
+            
+           
+
+        
+    </div>
+     <!--
+   <div class="page">
+      
+    <ul class="pagination">
+        <li><a href="#">«</a></li>
+        <li><a href="#">1</a></li>
+        <li><a class="active" href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">»</a></li>
+      </ul>
+   </div> 
+   -->
+   <script>
+    /*-----For Search Bar-----------------------------*/
+    $(document).on('click','.search',function(){
+        $('.search-bar').addClass('search-bar-active')
+    });
+ 
+    $(document).on('click','.search-cancel',function(){
+        $('.search-bar').removeClass('search-bar-active')
+    });
+  
+</script>
+    </body>
+    </html>
